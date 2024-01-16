@@ -1,23 +1,27 @@
+'use client';
+
 import { titleFont } from '@/config/fonts';
+import { useUiStore } from '@/store/ui';
 import Link from 'next/link';
 import { IoSearchOutline, IoCartOutline } from 'react-icons/io5';
 
 const links = [
     {
-        href: 'category/men',
+        href: '/category/men',
         name: "MEN'S",
     },
     {
-        href: 'category/women',
+        href: '/category/women',
         name: "WOMEN'S",
     },
     {
-        href: 'category/kids',
+        href: '/category/kids',
         name: "KIDS'",
     },
 ];
 
 export const TopMenu = () => {
+    const openSidebar = useUiStore(state => state.openSidebar);
     return (
         <nav className='flex px-5 justify-between items-center w-full'>
             <div>
@@ -48,7 +52,9 @@ export const TopMenu = () => {
                         <IoCartOutline className='w-5 h-5' />
                     </div>
                 </Link>
-                <button className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'>MENU</button>
+                <button onClick={openSidebar} className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'>
+                    MENU
+                </button>
             </div>
         </nav>
     );
