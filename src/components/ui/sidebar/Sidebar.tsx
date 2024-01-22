@@ -16,22 +16,22 @@ import {
 
 const sidebarItems = [
     {
-        href: '/',
+        href: '/profile',
         icon: <IoPersonOutline size={30} />,
         name: 'Profile',
     },
     {
-        href: '/',
+        href: '/orders',
         icon: <IoTicketOutline size={30} />,
         name: 'Orders',
     },
     {
-        href: '/',
+        href: '/loging',
         icon: <IoLogInOutline size={30} />,
         name: 'Log in',
     },
     {
-        href: '/',
+        href: '/logout',
         icon: <IoLogOutOutline size={30} />,
         name: 'Log out',
     },
@@ -39,17 +39,17 @@ const sidebarItems = [
 
 const sidebarItemsAdmin = [
     {
-        href: '/',
+        href: '/products',
         icon: <IoShirtOutline size={30} />,
         name: 'Products',
     },
     {
-        href: '/',
+        href: '/orders',
         icon: <IoTicketOutline size={30} />,
         name: 'Orders',
     },
     {
-        href: '/',
+        href: '/users',
         icon: <IoPeopleOutline size={30} />,
         name: 'Users',
     },
@@ -98,6 +98,7 @@ export const Sidebar = () => {
                 </div>
                 {sidebarItems.map(({ href, icon, name }) => (
                     <Link
+                        key={href}
                         href={href}
                         className='flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all'
                     >
@@ -110,6 +111,7 @@ export const Sidebar = () => {
 
                 {sidebarItemsAdmin.map(({ href, icon, name }) => (
                     <Link
+                        key={href}
                         href={href}
                         className='flex items-center mt-10 p-2 hover:bg-gray-100 rounded transition-all'
                     >

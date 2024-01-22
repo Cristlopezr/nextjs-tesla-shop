@@ -15,7 +15,7 @@ const links = [
         name: "WOMEN'S",
     },
     {
-        href: '/category/kids',
+        href: '/category/kid',
         name: "KIDS'",
     },
 ];
@@ -33,7 +33,11 @@ export const TopMenu = () => {
 
             <div className='hidden sm:block'>
                 {links.map(({ href, name }) => (
-                    <Link className='m-2 p-2 rounded-md transition-all hover:bg-gray-100' href={href}>
+                    <Link
+                        key={href}
+                        className='m-2 p-2 rounded-md transition-all hover:bg-gray-100'
+                        href={href}
+                    >
                         {name}
                     </Link>
                 ))}
